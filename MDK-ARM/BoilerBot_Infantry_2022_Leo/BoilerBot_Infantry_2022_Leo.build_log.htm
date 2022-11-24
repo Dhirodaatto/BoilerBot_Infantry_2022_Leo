@@ -3,9 +3,9 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.36.0.0
+IDE-Version: µVision V5.36.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: YuXi Liu, Purdue University, LIC=UJWP0-BVPAC-MMX9I-T5HQU-QQ66J-WN061
+License Information: 0de k20, Nope, LIC=BUURY-IYYUS-CX0U6-DQISC-U6XJT-4TQ3M
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.36.0.0
@@ -17,21 +17,26 @@ Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.36.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      CMSIS_AGDI.dll V1.33.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\edcan\Desktop\ÔÚÐ£\Purdue\Robomaster\Competition Robot Source Code\BoilerBot_Infantry_2022_Leo\MDK-ARM\BoilerBot_Infantry_2022_Leo.uvprojx
-Project File Date:  11/22/2022
+C:\Users\dhiro\Documents\Boilerbot_control_mod\BoilerBot_Infantry_2022_Leo\MDK-ARM\BoilerBot_Infantry_2022_Leo.uvprojx
+Project File Date:  11/24/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BoilerBot_Infantry_2022_Leo'
-compiling port.c...
+compiling freertos.c...
+../Core/Src/freertos.c(197): warning:  #550-D: variable "xLastWakeTime"  was set but never used
+  	portTickType xLastWakeTime;
+../Core/Src/freertos.c(200): warning:  #177-D: variable "TimeIncrement"  was declared but never referenced
+    const TickType_t TimeIncrement = pdMS_TO_TICKS(1);
+../Core/Src/freertos.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=38056 RO-data=2256 RW-data=1036 ZI-data=20116  
+Program Size: Code=49184 RO-data=2300 RW-data=1288 ZI-data=27296  
 FromELF: creating hex file...
-"BoilerBot_Infantry_2022_Leo\BoilerBot_Infantry_2022_Leo.axf" - 0 Error(s), 0 Warning(s).
+"BoilerBot_Infantry_2022_Leo\BoilerBot_Infantry_2022_Leo.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -42,20 +47,20 @@ Package Vendor: ARM
    * Component: CORE Version: 5.5.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
-                Keil.STM32F4xx_DFP.2.16.0
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_BoilerBot_Infantry_2022_Leo
-  C:\Users\edcan\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
-  C:\Users\edcan\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

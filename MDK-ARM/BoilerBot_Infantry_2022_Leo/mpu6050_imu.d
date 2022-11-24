@@ -38,6 +38,9 @@ boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/s
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Algorithms/Algorithms.h/User_Defined_Math.h
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Devices/Devices.h/GM6020_Motor.h
 boilerbot_infantry_2022_leo\mpu6050_imu.o: ../Core/Inc/can.h

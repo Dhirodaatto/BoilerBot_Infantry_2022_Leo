@@ -37,6 +37,9 @@ boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+boilerbot_infantry_2022_leo\i2c_setup.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Core/Inc/i2c.h
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Core/Inc/main.h
 boilerbot_infantry_2022_leo\i2c_setup.o: ../Devices/Devices.h/MPU6050_IMU.h

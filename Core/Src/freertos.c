@@ -40,6 +40,7 @@
 #include "Referee_System.h"
 #include "Buzzer.h"
 #include "Jetson_Tx2.h"
+#include "usbd_cdc_if.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,6 +68,7 @@ osThreadId Task_CAN_SendHandle;
 osThreadId Task_CAN1_RecHandle;
 osThreadId Task_CAN2_RecHandle;
 osThreadId Task_Robot_CtrlHandle;
+osThreadId SendtoPCHandle;
 osMessageQId CAN1_ReceiveHandle;
 osMessageQId CAN2_ReceiveHandle;
 osMessageQId CAN_SendHandle;
@@ -84,7 +86,9 @@ void CAN_Send_ALL(void const * argument);
 void CAN1_Rec(void const * argument);
 void CAN2_Rec(void const * argument);
 void Robot_Control(void const * argument);
+void StartTransmission(void const * argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
@@ -167,6 +171,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(Task_Robot_Ctrl, Robot_Control, osPriorityRealtime, 0, 640);
   Task_Robot_CtrlHandle = osThreadCreate(osThread(Task_Robot_Ctrl), NULL);
 
+  /* definition and creation of SendtoPC */
+  osThreadDef(SendtoPC, StartTransmission, osPriorityRealtime, 0, 256);
+  SendtoPCHandle = osThreadCreate(osThread(SendtoPC), NULL);
+
   /* USER CODE BEGIN RTOS_THREADS */
 
   /* add threads, ... */
@@ -183,6 +191,8 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartIMUTask */
 void StartIMUTask(void const * argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartIMUTask */
 	portTickType xLastWakeTime;
   xLastWakeTime = xTaskGetTickCount();
@@ -191,18 +201,18 @@ void StartIMUTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-		Board_A_IMU_Func.Board_A_IMU_Calibrate(&Board_A_IMU);
-		Board_A_IMU_Func.Board_A_IMU_Read_Data(&Board_A_IMU);
-		Board_A_IMU_Func.Board_A_IMU_Calc_Angle(&Board_A_IMU);
-		IMU_Temp_Control_Func.Board_A_IMU_Temp_Control();
-		
-		#ifdef USE_MPU6050
-		MPU6050_IMU_Func.MPU6050_IMU_Calibrate(&MPU6050_IMU);
-		MPU6050_IMU_Func.MPU6050_IMU_Read_Data(&MPU6050_IMU);
-		MPU6050_IMU_Func.MPU6050_IMU_Calc_Angle(&MPU6050_IMU);
-		#endif
-		
-    vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
+//		Board_A_IMU_Func.Board_A_IMU_Calibrate(&Board_A_IMU);
+//		Board_A_IMU_Func.Board_A_IMU_Read_Data(&Board_A_IMU);
+//		Board_A_IMU_Func.Board_A_IMU_Calc_Angle(&Board_A_IMU);
+//		IMU_Temp_Control_Func.Board_A_IMU_Temp_Control();
+//		
+//		#ifdef USE_MPU6050
+//		MPU6050_IMU_Func.MPU6050_IMU_Calibrate(&MPU6050_IMU);
+//		MPU6050_IMU_Func.MPU6050_IMU_Read_Data(&MPU6050_IMU);
+//		MPU6050_IMU_Func.MPU6050_IMU_Calc_Angle(&MPU6050_IMU);
+//		#endif
+//		
+//    vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
   }
   /* USER CODE END StartIMUTask */
 }
@@ -336,6 +346,27 @@ void Robot_Control(void const * argument)
 		vTaskDelayUntil(&xLastWakeTime, TimeIncrement);
   }
   /* USER CODE END Robot_Control */
+}
+
+/* USER CODE BEGIN Header_StartTransmission */
+/**
+* @brief Function implementing the SendtoPC thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTransmission */
+void StartTransmission(void const * argument)
+{
+  /* USER CODE BEGIN StartTransmission */
+  /* Infinite loop */
+	char information_buffer[64] = "";
+  for(;;)
+  {
+		snprintf(information_buffer, sizeof(information_buffer), "%d, %d, %d", HAL_GetTick(), GM6020_Pitch.Actual_Angle, GM6020_Pitch.Target_Angle);
+		CDC_Transmit_FS((uint8_t*)information_buffer, sizeof(information_buffer));
+    osDelay(1);
+  }
+  /* USER CODE END StartTransmission */
 }
 
 /* Private application code --------------------------------------------------*/

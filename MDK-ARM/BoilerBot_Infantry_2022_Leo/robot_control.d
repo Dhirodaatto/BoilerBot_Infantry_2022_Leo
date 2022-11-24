@@ -41,6 +41,9 @@ boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc
 boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+boilerbot_infantry_2022_leo\robot_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 boilerbot_infantry_2022_leo\robot_control.o: ../BSP/BSP.h/CAN_Setup.h
 boilerbot_infantry_2022_leo\robot_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 boilerbot_infantry_2022_leo\robot_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

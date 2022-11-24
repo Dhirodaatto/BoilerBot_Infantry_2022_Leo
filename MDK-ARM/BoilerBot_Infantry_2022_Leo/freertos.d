@@ -38,6 +38,9 @@ boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm3
 boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+boilerbot_infantry_2022_leo\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
@@ -102,3 +105,11 @@ boilerbot_infantry_2022_leo\freertos.o: ../Devices/Devices.h/WT901_IMU.h
 boilerbot_infantry_2022_leo\freertos.o: ../Devices/Devices.h/Referee_System.h
 boilerbot_infantry_2022_leo\freertos.o: ../BSP/BSP.h/CRC_Verification.h
 boilerbot_infantry_2022_leo\freertos.o: ../Devices/Devices.h/Buzzer.h
+boilerbot_infantry_2022_leo\freertos.o: ../USB_DEVICE/App/usbd_cdc_if.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+boilerbot_infantry_2022_leo\freertos.o: ../USB_DEVICE/Target/usbd_conf.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+boilerbot_infantry_2022_leo\freertos.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h

@@ -37,6 +37,9 @@ boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/s
 boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h
+boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+boilerbot_infantry_2022_leo\dr16_remote.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h
 boilerbot_infantry_2022_leo\dr16_remote.o: ../Core/Inc/usart.h
 boilerbot_infantry_2022_leo\dr16_remote.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 boilerbot_infantry_2022_leo\dr16_remote.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
